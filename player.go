@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"strings"
-	"time"
 )
 
 const (
@@ -30,7 +29,7 @@ func NewPlayer(id int, dices []int) Player {
 }
 
 func (p *Player) Roll() {
-	rand.Seed(time.Now().UnixNano())
+	// rand.Seed(time.Now().UnixNano())
 	for i := range p.Dices {
 		res := rand.Intn(MAX_NUM_DICE-MIN_NUM_DICE+1) + MIN_NUM_DICE
 		p.Dices[i] = res
